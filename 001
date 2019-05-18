@@ -1,1 +1,18 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        l = nums.copy()
+        l.sort()
+        for x in l:
+            index_x = l.index(x)
+            if index_x + 1 != l.__len__():
+                for y in l[index_x + 1:]:
+                    if x + y == target and x == y:
+                        key_x = nums.index(x)
+                        key_y = nums[key_x + 1:].index(y)
+                        return [key_x, key_y + key_x + 1]
+                    elif x + y == target:
+                        key_x = nums.index(x)
+                        key_y = nums.index(y)
+                        return [key_x, key_y]
+
 
