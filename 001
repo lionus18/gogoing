@@ -1,6 +1,6 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        l = nums.copy()
+        l = nums.copy(reverse=True) # reverse=True, 由大到小排序
         l.sort()
         for x in l:
             index_x = l.index(x)
