@@ -1,7 +1,7 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        l = nums.copy(reverse=True) # reverse=True, 由大到小排序
-        l.sort()
+        l = nums.copy()
+        l.sort(reverse=True) # reverse=True, 由大到小排序
         for x in l:
             index_x = l.index(x)
             if index_x + 1 != l.__len__():
