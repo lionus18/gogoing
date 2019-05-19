@@ -1,0 +1,23 @@
+def lengthOfLongestSubstring(s: str) -> int:
+    """暴力法"""
+    start = -1
+    max_count = 0
+    if s == "":
+        return 0
+    for c in s:
+        count = 0
+        start = start + 1
+        index_array = [0] * 128
+        for ch in s[start:]:
+            if index_array[ord(ch)] == 1:
+                break
+            else:
+                index_array[ord(ch)] = 1
+                count = count + 1
+            print(ch, s[start:], count)
+        if max_count <= count:
+            max_count = count
+    return max_count
+
+    """滑动窗口法"""
+    """待完善...."""
