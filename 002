@@ -15,7 +15,7 @@ class Solution:
             result_list=[]
             result_l=0
             while l is not None:
-                result_list.insert(0,l.val)
+                result_list.insert(0,l.val) #头插法
                 l=l.next
             for x in result_list:
                 result_l=result_l*10+x
@@ -27,5 +27,5 @@ class Solution:
             return [0]
         while result!=0:
             result_list.append(result%10)
-            result=result//10
+            result=result//10  #整除
         return result_list
