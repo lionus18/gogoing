@@ -20,4 +20,24 @@ def lengthOfLongestSubstring(s: str) -> int:
     return max_count
 
     """滑动窗口法"""
+    list_s = list(s)
+    first = 0
+    high = 0
+    count = 0
+    max_count = 0
+    flag = [0] * 128
+    while high < len(list_s):
+        index_high = ord(list_s[high])
+        index_first = ord(list_s[first])
+        if flag[index_high] == 1:
+            flag[index_first] = 0
+            first = first + 1
+            count = 0  # 中断时count清0
+        else:
+            flag[index_high] = 1
+            high = high + 1
+            count = high - first #####
+            if max_count <= count:
+                max_count = count
+    return max_count
     """待完善...."""
