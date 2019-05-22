@@ -6,11 +6,11 @@ class Solution:
             index_x = l.index(x)
             if index_x + 1 != l.__len__():
                 for y in l[index_x + 1:]:
-                    if x + y == target and x == y: #相同时拆分，利用x的下标计算y的下标
+                    if x + y == target and x == y: #相同时，拆分，利用x的下标计算y的下标
                         key_x = nums.index(x)
                         key_y = nums[key_x + 1:].index(y)
                         return [key_x, key_y + key_x + 1]
-                    elif x + y == target: #不同时直接获取
+                    elif x + y == target: #不同时，直接获取
                         key_x = nums.index(x)
                         key_y = nums.index(y)
                         return [key_x, key_y]
