@@ -39,5 +39,7 @@ def lengthOfLongestSubstring(s: str) -> int:
             count = high - first #####
             if max_count <= count:
                 max_count = count
+            if max_count >= (length - first): # 提前退出
+                break
     return max_count
     """待完善...."""
