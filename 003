@@ -37,7 +37,7 @@ def lengthOfLongestSubstring(s: str) -> int:
             flag[index_high] = 1
             high = high + 1
             count = high - first #####
-            if max_count <= count:
+            if max_count < count:
                 max_count = count
             if max_count >= (length - first): # 提前退出
                 break
